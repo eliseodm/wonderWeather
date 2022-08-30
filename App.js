@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   SafeAreaView,
@@ -14,14 +6,29 @@ import {
   Text,
 } from 'react-native';
 import MainWeatherCard from './components/MainWeatherCard/MainWeatherCard';
-import { mock_cityInfo } from './__mockData__/index';
+import usePublicIp from "./hooks/usePublicIp";
+import useLocationInfo from "./hooks/useLocationInfo";
+import useTemperatureInfo from "./hooks/useTemperatureInfo";
 
 const App = () => {
-   
+  const { publicIpV4 } = usePublicIp();
+  const { locationData } = useLocationInfo(publicIpV4);
+  const { temperatureInfo } = useTemperatureInfo(
+    locationData.lat,
+    locationData.lon
+    );
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <MainWeatherCard current={mock_cityInfo} />
+        <Text style={styles.appTitle}>Wonder Wether</Text>
+        <MainWeatherCard
+          city={locationData.city}
+          countryCode={locationData.country}
+          temperature={temperatureInfo.temperature}
+          minTemp={temperatureInfo.minTemp}
+          maxTemp={temperatureInfo.maxTemp}
+          icon={temperatureInfo.icon}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -34,6 +41,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  appTitle: {
+    fontSize: 16
+  }
 });
 
 export default App;
