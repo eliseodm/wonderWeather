@@ -11,7 +11,6 @@ const useLocationInfo = (publicIp) => {
       .get(`/${publicIp}`)
       .then((response) => {
         const { data } = response;
-        console.log(response)
         setLocationData({
           city: data.city,
           country: data.country,

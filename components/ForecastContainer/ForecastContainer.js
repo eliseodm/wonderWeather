@@ -1,9 +1,11 @@
 import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import React from 'react';
 import ForecastDay from '../ForecastDay/ForecastDay';
+import { dayNames } from "../../constants";
 
-function ForecastContainer({ forecastInfo }) {
-    const dayNames = ["dom", "lun", "mar", "mie", "jue", "vie", "sab"];
+
+function ForecastContainer({ cityInfo }) {
+    const { forecastInfo } = cityInfo;
 
     return(
         <View style={styles.forecastContainer}>

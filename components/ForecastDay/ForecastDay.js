@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 
 function ForecastDay({ day, minTemp, maxTemp, icon }) {
+    
     return(
         <View style={styles.forecastDay}>
             <Text>{ day }</Text>
@@ -10,7 +11,7 @@ function ForecastDay({ day, minTemp, maxTemp, icon }) {
                     source={{
                     uri: `https://openweathermap.org/img/wn/${icon}@2x.png`,
                     }}
-                />
+            />
             <Text style={styles.forecastTemps}>{Math.round(maxTemp)} ºC</Text>
             <Text style={styles.forecastTemps}>{Math.round(minTemp)} ºC</Text>
         </View>

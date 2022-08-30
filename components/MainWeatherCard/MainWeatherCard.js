@@ -2,31 +2,26 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import React from 'react';
 
 
-function MainWeatherCard({
-    city,
-    countryCode,
-    temperature,
-    minTemp,
-    maxTemp,
-    icon,
-  }) {
-    return (
-        <>
-            <Text style={styles.city}>{city}</Text>
-            <Text style={styles.country}>{countryCode}</Text>
-            <View style={styles.current}>
-                <Image
-                    style={styles.largeIcon}
-                    source={{
-                    uri: `https://openweathermap.org/img/wn/${icon}@4x.png`,
-                    }}
-                />
-                <Text style={styles.currentTemp}>{Math.round(temperature)}°C</Text>
-                <Text style={styles.maxTemp}>Max {Math.round(maxTemp)}°C</Text>
-                <Text style={styles.minTemp}>Min {Math.round(minTemp)}°C</Text>
-            </View>
-        </>
-    );
+function MainWeatherCard({ cityInfo }) {
+
+  const { city, country, temp, minTemp, maxTemp, icon } = cityInfo;
+  return (
+      <>
+          <Text style={styles.city}>{city}</Text>
+          <Text style={styles.country}>{country}</Text>
+          <View style={styles.current}>
+              <Image
+                  style={styles.largeIcon}
+                  source={{
+                  uri: `https://openweathermap.org/img/wn/${icon}@4x.png`,
+                  }}
+              />
+              <Text style={styles.currentTemp}>{Math.round(temp)}°C</Text>
+              <Text style={styles.maxTemp}>Max {Math.round(maxTemp)}°C</Text>
+              <Text style={styles.minTemp}>Min {Math.round(minTemp)}°C</Text>
+          </View>
+      </>
+  );
 }
 
 export default MainWeatherCard;
