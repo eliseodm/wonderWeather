@@ -2,8 +2,8 @@ import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import React from 'react';
 import ForecastDay from '../ForecastDay/ForecastDay';
 
-function ForecastContainer({ minTemp, maxTemp, icon }) {
-    const days = ["mie", "jue", "vie", "sab", "dom"];
+function ForecastContainer({ forecastInfo }) {
+    const dayNames = ["dom", "lun", "mar", "mie", "jue", "vie", "sab"];
 
     return(
         <View style={styles.forecastContainer}>
@@ -11,14 +11,14 @@ function ForecastContainer({ minTemp, maxTemp, icon }) {
             <ScrollView>
                 <View>
                     {
-                        days.map((day) => {
+                        forecastInfo.map((day) => {
                             return(
                                 <ForecastDay
-                                    key={day}
-                                    minTemp={minTemp}
-                                    maxTemp={maxTemp}
-                                    icon={icon}
-                                    day={day}
+                                    key={day.dayNum}
+                                    minTemp={day.minTemp}
+                                    maxTemp={day.maxTemp}
+                                    icon={day.icon}
+                                    day={dayNames[day.dayNum]}
                                 />
                             )
                         })
