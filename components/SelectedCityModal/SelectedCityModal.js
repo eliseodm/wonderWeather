@@ -1,28 +1,6 @@
 import { StyleSheet, View, Text, Modal, Button } from 'react-native';
 import React, { useState }from 'react';
-
-const listOfCities = [
-    {
-      name: "Barcelona",
-      country: "ES",
-    },
-    {
-      name: "Helsinki",
-      country: "FI",
-    },
-    {
-      name: "Tokyo",
-      country: "JP",
-    },
-    {
-      name: "Denver",
-      country: "US",
-    },
-    {
-      name: "Berlín",
-      country: "DE",
-    },
-];
+import { listOfCities } from '../../constants/index';
 
 function SelectedCityModal({ selectedCity }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
