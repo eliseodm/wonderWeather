@@ -28,7 +28,7 @@ const useTemperatureInfo = (lat, lon) => {
         console.log("ERROR: ", error);
       });
   };
-  console.log(temperatureInfo)
+  
   useEffect(() => {
     if (lat && lon) fetchIpInfo();
   }, [lat, lon]);

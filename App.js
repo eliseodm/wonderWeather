@@ -1,7 +1,7 @@
 import React from 'react';
 import {
+  ActivityIndicator,
   SafeAreaView,
-  ScrollView,
   StyleSheet,
   Text,
 } from 'react-native';
@@ -13,23 +13,28 @@ import useTemperatureInfo from "./hooks/useTemperatureInfo";
 const App = () => {
   const { publicIpV4 } = usePublicIp();
   const { locationData } = useLocationInfo(publicIpV4);
-  const { temperatureInfo } = useTemperatureInfo(
+  const { temperatureInfo, loading } = useTemperatureInfo(
     locationData.lat,
     locationData.lon
     );
+  
+  if(loading){
+    return <SafeAreaView style={styles.loading}>
+              <ActivityIndicator size="large" />
+          </SafeAreaView>;
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <Text style={styles.appTitle}>Wonder Wether</Text>
-        <MainWeatherCard
-          city={locationData.city}
-          countryCode={locationData.country}
-          temperature={temperatureInfo.temperature}
-          minTemp={temperatureInfo.minTemp}
-          maxTemp={temperatureInfo.maxTemp}
-          icon={temperatureInfo.icon}
-        />
-      </ScrollView>
+      <Text style={styles.appTitle}>Wonder Wether</Text>
+      <MainWeatherCard
+        city={locationData.city}
+        countryCode={locationData.country}
+        temperature={temperatureInfo.temperature}
+        minTemp={temperatureInfo.minTemp}
+        maxTemp={temperatureInfo.maxTemp}
+        icon={temperatureInfo.icon}
+      />
     </SafeAreaView>
   );
 };
@@ -43,7 +48,13 @@ const styles = StyleSheet.create({
   },
   appTitle: {
     fontSize: 16
-  }
+  },
+  loading: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export default App;
