@@ -20,18 +20,24 @@ function SelectedCityModal({ onSelectCity, citiesList }) {
     
     return(
         <View>
-            <Button title='Seleccionar otra ciudad' onPress={showModal} color='blue'/>
+            <View style={styles.showModalButton}>
+                <Button title='Seleccionar otra ciudad' onPress={showModal} color='#6262b7'/>
+            </View>
             <Modal visible={isModalVisible} animationType='slide'>
                 <View style={styles.modalContainer}>
-                    <Text>Otras ciudades disponibles</Text>
+                    <Text style={styles.modalTitleText}>Otras ciudades disponibles</Text>
                     {
                         citiesList.map((city) => {
                             return(
-                                <Button key={city.city} onPress={()=> handleSelect(city)} title={city.city}/>
+                                <View key={city.city} style={styles.modalOptionButton}>
+                                    <Button  onPress={()=> handleSelect(city)} title={city.city} color='#6262b7'/>
+                                </View>
                             )
                         })
                     }
-                    <Button title='Cancelar' onPress={handleCancel} color='blue'/>
+                    <View style={styles.modalCancelButton}>
+                        <Button title='Cancelar' onPress={handleCancel} color='blue'/>
+                    </View>
                 </View>
             </Modal>
         </View>
@@ -39,6 +45,9 @@ function SelectedCityModal({ onSelectCity, citiesList }) {
 }
 
 const styles = StyleSheet.create({
+    showModalButton:{
+        marginTop: 15,
+    },
     modalContainer: {
         flex: 1,
         flexDirection: "column",
@@ -47,6 +56,16 @@ const styles = StyleSheet.create({
         padding: 16,
         marginTop: 20,
     },
+    modalTitleText:{
+        fontWeight: 'bold',
+        marginBottom: 15,
+    },
+    modalOptionButton: {
+        margin: 5,
+    },
+    modalCancelButton: {
+        marginTop: 50,
+    }
 })
 
 export default SelectedCityModal; 

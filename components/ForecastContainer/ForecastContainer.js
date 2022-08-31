@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     },
     forecastContainer: {
         marginTop: 16,
-        height: 325,
+        height: 300,
     }
 })
 
