@@ -73,7 +73,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   appTitle: {
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 10,
+
+
   },
   loading: {
     flex: 1,

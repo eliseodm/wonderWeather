@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 16,
         marginTop: 20,
-    }
+    },
 })
 
 export default SelectedCityModal; 

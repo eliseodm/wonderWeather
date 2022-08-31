@@ -7,7 +7,7 @@ function ForecastDay({ day, minTemp, maxTemp, icon }) {
         <View style={styles.forecastDay}>
             <Text>{ day }</Text>
             <Image
-                    style={styles.largeIcon}
+                    style={{width: 50, height: 50}}
                     source={{
                     uri: `https://openweathermap.org/img/wn/${icon}@2x.png`,
                     }}
@@ -20,14 +20,9 @@ function ForecastDay({ day, minTemp, maxTemp, icon }) {
 
 const styles = StyleSheet.create({
     forecastDay:{
+        alignItems: 'center',
       marginBottom: 10,
     },  
-    smallIcon: {
-        smallIcon: {
-            width: 150,
-            height: 150,
-          }
-    },
     forecastTemps: {
         fontSize: 24,
         fontWeight: 'bold',
