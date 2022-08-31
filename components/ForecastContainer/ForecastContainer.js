@@ -13,13 +13,14 @@ function ForecastContainer({ forecastInfo }) {
                     {
                         forecastInfo.map((day) => {
                             return(
-                                <ForecastDay
-                                    key={day.dayNum}
-                                    minTemp={day.minTemp}
-                                    maxTemp={day.maxTemp}
-                                    icon={day.icon}
-                                    day={dayNames[day.dayNum]}
-                                />
+                                <View key={day.dayNum} testID="ForecastContainer.days">
+                                    <ForecastDay
+                                        minTemp={day.minTemp}
+                                        maxTemp={day.maxTemp}
+                                        icon={day.icon}
+                                        day={dayNames[day.dayNum]}
+                                    />
+                                </View>
                             )
                         })
                     }

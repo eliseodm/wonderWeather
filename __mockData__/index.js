@@ -1,7 +1,7 @@
 const mock_citiesInfo = [
     {
       city: "San Miguel de Tucumán",
-      country: "ARG",
+      country: "Argentina",
       lat: -26.8238848,
       lon: -65.2378112,
     },
@@ -19,7 +19,7 @@ const mock_citiesInfo = [
   
   const mock_cityInfo = {
     city: "San Miguel de Tucumán",
-    country: "ARG",
+    country: "Argentina",
     icon: "01d",
     lat: -26.8238848,
     lon: -65.2378112,

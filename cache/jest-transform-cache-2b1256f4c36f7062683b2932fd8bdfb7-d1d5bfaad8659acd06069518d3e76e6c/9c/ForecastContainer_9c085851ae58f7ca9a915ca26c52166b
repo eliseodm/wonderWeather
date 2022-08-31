@@ -1,0 +1,176 @@
+5874b2c1819603e44afb0b38e1795603
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ForecastDay = _interopRequireDefault(require("../ForecastDay/ForecastDay"));
+
+var _constants = require("../../constants");
+
+function cov_1s6bklnjb2() {
+  var path = "/Users/eliseodiazmedina/Workspace/react-native/wonderWeather/components/ForecastContainer/ForecastContainer.js";
+  var hash = "9e02826d86418e53c5e0397cb96d4918f6680f3c";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/eliseodiazmedina/Workspace/react-native/wonderWeather/components/ForecastContainer/ForecastContainer.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 8,
+          column: 4
+        },
+        end: {
+          line: 29,
+          column: 5
+        }
+      },
+      "1": {
+        start: {
+          line: 15,
+          column: 28
+        },
+        end: {
+          line: 23,
+          column: 29
+        }
+      },
+      "2": {
+        start: {
+          line: 32,
+          column: 15
+        },
+        end: {
+          line: 43,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "ForecastContainer",
+        decl: {
+          start: {
+            line: 7,
+            column: 9
+          },
+          end: {
+            line: 7,
+            column: 26
+          }
+        },
+        loc: {
+          start: {
+            line: 7,
+            column: 45
+          },
+          end: {
+            line: 30,
+            column: 1
+          }
+        },
+        line: 7
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 14,
+            column: 41
+          },
+          end: {
+            line: 14,
+            column: 42
+          }
+        },
+        loc: {
+          start: {
+            line: 14,
+            column: 50
+          },
+          end: {
+            line: 24,
+            column: 25
+          }
+        },
+        line: 14
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "9e02826d86418e53c5e0397cb96d4918f6680f3c"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_1s6bklnjb2 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1s6bklnjb2();
+
+function ForecastContainer(_ref) {
+  var forecastInfo = _ref.forecastInfo;
+  cov_1s6bklnjb2().f[0]++;
+  cov_1s6bklnjb2().s[0]++;
+  return _react.default.createElement(_reactNative.View, {
+    style: styles.forecastContainer
+  }, _react.default.createElement(_reactNative.Text, {
+    style: styles.subtitle
+  }, "Proximos 5 dias"), _react.default.createElement(_reactNative.ScrollView, {
+    showsVerticalScrollIndicator: false
+  }, _react.default.createElement(_reactNative.View, {
+    testID: "ForecastCcontainer.days"
+  }, forecastInfo.map(function (day) {
+    cov_1s6bklnjb2().f[1]++;
+    cov_1s6bklnjb2().s[1]++;
+    return _react.default.createElement(_ForecastDay.default, {
+      key: day.dayNum,
+      minTemp: day.minTemp,
+      maxTemp: day.maxTemp,
+      icon: day.icon,
+      day: _constants.dayNames[day.dayNum]
+    });
+  }))));
+}
+
+var styles = (cov_1s6bklnjb2().s[2]++, _reactNative.StyleSheet.create({
+  subtitle: {
+    fontSize: 24,
+    marginVertical: 12,
+    marginLeft: 4,
+    color: '#e96e50'
+  },
+  forecastContainer: {
+    marginTop: 16,
+    height: 300
+  }
+}));
+var _default = ForecastContainer;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJGb3JlY2FzdENvbnRhaW5lciIsImZvcmVjYXN0SW5mbyIsInN0eWxlcyIsImZvcmVjYXN0Q29udGFpbmVyIiwic3VidGl0bGUiLCJtYXAiLCJkYXkiLCJkYXlOdW0iLCJtaW5UZW1wIiwibWF4VGVtcCIsImljb24iLCJkYXlOYW1lcyIsIlN0eWxlU2hlZXQiLCJjcmVhdGUiLCJmb250U2l6ZSIsIm1hcmdpblZlcnRpY2FsIiwibWFyZ2luTGVmdCIsImNvbG9yIiwibWFyZ2luVG9wIiwiaGVpZ2h0Il0sInNvdXJjZXMiOlsiRm9yZWNhc3RDb250YWluZXIuanMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgU3R5bGVTaGVldCwgVGV4dCwgU2Nyb2xsVmlldywgVmlldyB9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IEZvcmVjYXN0RGF5IGZyb20gJy4uL0ZvcmVjYXN0RGF5L0ZvcmVjYXN0RGF5JztcbmltcG9ydCB7IGRheU5hbWVzIH0gZnJvbSBcIi4uLy4uL2NvbnN0YW50c1wiO1xuXG5cbmZ1bmN0aW9uIEZvcmVjYXN0Q29udGFpbmVyKHsgZm9yZWNhc3RJbmZvIH0pIHtcbiAgICByZXR1cm4oXG4gICAgICAgIDxWaWV3IHN0eWxlPXtzdHlsZXMuZm9yZWNhc3RDb250YWluZXJ9PlxuICAgICAgICAgICAgPFRleHQgc3R5bGU9e3N0eWxlcy5zdWJ0aXRsZX0+UHJveGltb3MgNSBkaWFzPC9UZXh0PlxuICAgICAgICAgICAgPFNjcm9sbFZpZXcgc2hvd3NWZXJ0aWNhbFNjcm9sbEluZGljYXRvcj17ZmFsc2V9PlxuICAgICAgICAgICAgICAgIDxWaWV3IHRlc3RJRD1cIkZvcmVjYXN0Q2NvbnRhaW5lci5kYXlzXCI+XG4gICAgICAgICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGZvcmVjYXN0SW5mby5tYXAoKGRheSkgPT4ge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybihcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPEZvcmVjYXN0RGF5XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBrZXk9e2RheS5kYXlOdW19XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtaW5UZW1wPXtkYXkubWluVGVtcH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1heFRlbXA9e2RheS5tYXhUZW1wfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaWNvbj17ZGF5Lmljb259XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYXk9e2RheU5hbWVzW2RheS5kYXlOdW1dfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICA8L1ZpZXc+XG4gICAgICAgICAgICA8L1Njcm9sbFZpZXc+XG4gICAgICAgIDwvVmlldz5cbiAgICApXG59XG5cbmNvbnN0IHN0eWxlcyA9IFN0eWxlU2hlZXQuY3JlYXRlKHtcbiAgICBzdWJ0aXRsZTp7XG4gICAgICAgIGZvbnRTaXplOiAyNCxcbiAgICAgICAgbWFyZ2luVmVydGljYWw6IDEyLFxuICAgICAgICBtYXJnaW5MZWZ0OiA0LFxuICAgICAgICBjb2xvcjogJyNlOTZlNTAnLFxuICAgIH0sXG4gICAgZm9yZWNhc3RDb250YWluZXI6IHtcbiAgICAgICAgbWFyZ2luVG9wOiAxNixcbiAgICAgICAgaGVpZ2h0OiAzMDAsXG4gICAgfVxufSlcblxuZXhwb3J0IGRlZmF1bHQgRm9yZWNhc3RDb250YWluZXI7Il0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBQ0E7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBR0EsU0FBU0EsaUJBQVQsT0FBNkM7RUFBQSxJQUFoQkMsWUFBZ0IsUUFBaEJBLFlBQWdCO0VBQUE7RUFBQTtFQUN6QyxPQUNJLDZCQUFDLGlCQUFEO0lBQU0sS0FBSyxFQUFFQyxNQUFNLENBQUNDO0VBQXBCLEdBQ0ksNkJBQUMsaUJBQUQ7SUFBTSxLQUFLLEVBQUVELE1BQU0sQ0FBQ0U7RUFBcEIscUJBREosRUFFSSw2QkFBQyx1QkFBRDtJQUFZLDRCQUE0QixFQUFFO0VBQTFDLEdBQ0ksNkJBQUMsaUJBQUQ7SUFBTSxNQUFNLEVBQUM7RUFBYixHQUVRSCxZQUFZLENBQUNJLEdBQWIsQ0FBaUIsVUFBQ0MsR0FBRCxFQUFTO0lBQUE7SUFBQTtJQUN0QixPQUNJLDZCQUFDLG9CQUFEO01BQ0ksR0FBRyxFQUFFQSxHQUFHLENBQUNDLE1BRGI7TUFFSSxPQUFPLEVBQUVELEdBQUcsQ0FBQ0UsT0FGakI7TUFHSSxPQUFPLEVBQUVGLEdBQUcsQ0FBQ0csT0FIakI7TUFJSSxJQUFJLEVBQUVILEdBQUcsQ0FBQ0ksSUFKZDtNQUtJLEdBQUcsRUFBRUMsbUJBQUEsQ0FBU0wsR0FBRyxDQUFDQyxNQUFiO0lBTFQsRUFESjtFQVNILENBVkQsQ0FGUixDQURKLENBRkosQ0FESjtBQXNCSDs7QUFFRCxJQUFNTCxNQUFNLDZCQUFHVSx1QkFBQSxDQUFXQyxNQUFYLENBQWtCO0VBQzdCVCxRQUFRLEVBQUM7SUFDTFUsUUFBUSxFQUFFLEVBREw7SUFFTEMsY0FBYyxFQUFFLEVBRlg7SUFHTEMsVUFBVSxFQUFFLENBSFA7SUFJTEMsS0FBSyxFQUFFO0VBSkYsQ0FEb0I7RUFPN0JkLGlCQUFpQixFQUFFO0lBQ2ZlLFNBQVMsRUFBRSxFQURJO0lBRWZDLE1BQU0sRUFBRTtFQUZPO0FBUFUsQ0FBbEIsQ0FBSCxDQUFaO2VBYWVuQixpQiJ9

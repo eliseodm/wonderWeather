@@ -1,0 +1,50 @@
+c6db4415dde158d66a97f1ef83e9324f
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var _react = _interopRequireDefault(require("react"));
+
+function ForecastDay(_ref) {
+  var day = _ref.day,
+      minTemp = _ref.minTemp,
+      maxTemp = _ref.maxTemp,
+      icon = _ref.icon;
+  return _react.default.createElement(_reactNative.View, {
+    style: styles.forecastDay
+  }, _react.default.createElement(_reactNative.Text, null, day), _react.default.createElement(_reactNative.Image, {
+    style: {
+      width: 50,
+      height: 50
+    },
+    source: {
+      uri: "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+    }
+  }), _react.default.createElement(_reactNative.Text, {
+    style: styles.forecastTemps
+  }, Math.round(maxTemp), " \xBAC"), _react.default.createElement(_reactNative.Text, {
+    style: styles.forecastTemps
+  }, Math.round(minTemp), " \xBAC"));
+}
+
+var styles = _reactNative.StyleSheet.create({
+  forecastDay: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10
+  },
+  forecastTemps: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  }
+});
+
+var _default = ForecastDay;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJGb3JlY2FzdERheSIsImRheSIsIm1pblRlbXAiLCJtYXhUZW1wIiwiaWNvbiIsInN0eWxlcyIsImZvcmVjYXN0RGF5Iiwid2lkdGgiLCJoZWlnaHQiLCJ1cmkiLCJmb3JlY2FzdFRlbXBzIiwiTWF0aCIsInJvdW5kIiwiU3R5bGVTaGVldCIsImNyZWF0ZSIsImZsZXhEaXJlY3Rpb24iLCJhbGlnbkl0ZW1zIiwibWFyZ2luQm90dG9tIiwiZm9udFNpemUiLCJmb250V2VpZ2h0IiwidGV4dEFsaWduIl0sInNvdXJjZXMiOlsiRm9yZWNhc3REYXkuanMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgU3R5bGVTaGVldCwgVGV4dCwgVmlldywgSW1hZ2UgfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcblxuZnVuY3Rpb24gRm9yZWNhc3REYXkoeyBkYXksIG1pblRlbXAsIG1heFRlbXAsIGljb24gfSkge1xuICAgIFxuICAgIHJldHVybihcbiAgICAgICAgPFZpZXcgc3R5bGU9e3N0eWxlcy5mb3JlY2FzdERheX0+XG4gICAgICAgICAgICA8VGV4dD57IGRheSB9PC9UZXh0PlxuICAgICAgICAgICAgPEltYWdlXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7d2lkdGg6IDUwLCBoZWlnaHQ6IDUwfX1cbiAgICAgICAgICAgICAgICAgICAgc291cmNlPXt7XG4gICAgICAgICAgICAgICAgICAgIHVyaTogYGh0dHBzOi8vb3BlbndlYXRoZXJtYXAub3JnL2ltZy93bi8ke2ljb259QDJ4LnBuZ2AsXG4gICAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAvPlxuICAgICAgICAgICAgPFRleHQgc3R5bGU9e3N0eWxlcy5mb3JlY2FzdFRlbXBzfT57TWF0aC5yb3VuZChtYXhUZW1wKX0gwrpDPC9UZXh0PlxuICAgICAgICAgICAgPFRleHQgc3R5bGU9e3N0eWxlcy5mb3JlY2FzdFRlbXBzfT57TWF0aC5yb3VuZChtaW5UZW1wKX0gwrpDPC9UZXh0PlxuICAgICAgICA8L1ZpZXc+XG4gICAgKVxufVxuXG5jb25zdCBzdHlsZXMgPSBTdHlsZVNoZWV0LmNyZWF0ZSh7XG4gICAgZm9yZWNhc3REYXk6e1xuICAgICAgICBmbGV4RGlyZWN0aW9uOiAncm93JyxcbiAgICAgICAgYWxpZ25JdGVtczogJ2NlbnRlcicsXG4gICAgICBtYXJnaW5Cb3R0b206IDEwLFxuICAgIH0sICBcbiAgICBmb3JlY2FzdFRlbXBzOiB7XG4gICAgICAgIGZvbnRTaXplOiAxNixcbiAgICAgICAgZm9udFdlaWdodDogJ2JvbGQnLFxuICAgICAgICB0ZXh0QWxpZ246ICdjZW50ZXInLFxuICAgICAgfSwgIFxufSlcblxuZXhwb3J0IGRlZmF1bHQgRm9yZWNhc3REYXk7Il0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O0FBQ0E7O0FBRUEsU0FBU0EsV0FBVCxPQUFzRDtFQUFBLElBQS9CQyxHQUErQixRQUEvQkEsR0FBK0I7RUFBQSxJQUExQkMsT0FBMEIsUUFBMUJBLE9BQTBCO0VBQUEsSUFBakJDLE9BQWlCLFFBQWpCQSxPQUFpQjtFQUFBLElBQVJDLElBQVEsUUFBUkEsSUFBUTtFQUVsRCxPQUNJLDZCQUFDLGlCQUFEO0lBQU0sS0FBSyxFQUFFQyxNQUFNLENBQUNDO0VBQXBCLEdBQ0ksNkJBQUMsaUJBQUQsUUFBUUwsR0FBUixDQURKLEVBRUksNkJBQUMsa0JBQUQ7SUFDUSxLQUFLLEVBQUU7TUFBQ00sS0FBSyxFQUFFLEVBQVI7TUFBWUMsTUFBTSxFQUFFO0lBQXBCLENBRGY7SUFFUSxNQUFNLEVBQUU7TUFDUkMsR0FBRyx5Q0FBdUNMLElBQXZDO0lBREs7RUFGaEIsRUFGSixFQVFJLDZCQUFDLGlCQUFEO0lBQU0sS0FBSyxFQUFFQyxNQUFNLENBQUNLO0VBQXBCLEdBQW9DQyxJQUFJLENBQUNDLEtBQUwsQ0FBV1QsT0FBWCxDQUFwQyxXQVJKLEVBU0ksNkJBQUMsaUJBQUQ7SUFBTSxLQUFLLEVBQUVFLE1BQU0sQ0FBQ0s7RUFBcEIsR0FBb0NDLElBQUksQ0FBQ0MsS0FBTCxDQUFXVixPQUFYLENBQXBDLFdBVEosQ0FESjtBQWFIOztBQUVELElBQU1HLE1BQU0sR0FBR1EsdUJBQUEsQ0FBV0MsTUFBWCxDQUFrQjtFQUM3QlIsV0FBVyxFQUFDO0lBQ1JTLGFBQWEsRUFBRSxLQURQO0lBRVJDLFVBQVUsRUFBRSxRQUZKO0lBR1ZDLFlBQVksRUFBRTtFQUhKLENBRGlCO0VBTTdCUCxhQUFhLEVBQUU7SUFDWFEsUUFBUSxFQUFFLEVBREM7SUFFWEMsVUFBVSxFQUFFLE1BRkQ7SUFHWEMsU0FBUyxFQUFFO0VBSEE7QUFOYyxDQUFsQixDQUFmOztlQWFlcEIsVyJ9

@@ -7,8 +7,8 @@ function MainWeatherCard({ cityInfo, isCurrentLocation }) {
   const { city, country, temp, minTemp, maxTemp, icon } = cityInfo;
   return (
       <>
-          <Text style={styles.city}>{city}</Text>
-          <Text style={styles.country}>{country}</Text>
+          <Text testID="MainWeatherCard.city" style={styles.city}>{city}</Text>
+          <Text testID="MainWeatherCard.country" style={styles.country}>{country}</Text>
           {isCurrentLocation === true && (
             <Text>
               Uicación actual
@@ -21,7 +21,7 @@ function MainWeatherCard({ cityInfo, isCurrentLocation }) {
                   uri: `https://openweathermap.org/img/wn/${icon}@4x.png`,
                   }}
               />
-              <Text style={styles.currentTemp}>{Math.round(temp)}°C</Text>
+              <Text testID="MainWeatherCard.temp" style={styles.currentTemp}>{Math.round(temp)}°C</Text>
               <Text style={styles.maxTemp}>Max {Math.round(maxTemp)}°C</Text>
               <Text style={styles.minTemp}>Min {Math.round(minTemp)}°C</Text>
           </View>

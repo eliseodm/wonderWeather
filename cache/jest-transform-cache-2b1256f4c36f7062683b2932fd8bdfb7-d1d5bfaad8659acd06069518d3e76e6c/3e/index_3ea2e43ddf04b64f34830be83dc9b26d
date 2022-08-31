@@ -1,0 +1,6 @@
+d22a874ec8df40b216e9729d567da8fe
+module.exports = {
+  parallel: require('./parallel.js'),
+  serial: require('./serial.js'),
+  serialOrdered: require('./serialOrdered.js')
+};

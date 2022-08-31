@@ -1,0 +1,40 @@
+d44320a6e7e38980bcc8c7f67c5e5377
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+require("react-native");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactNative2 = require("@testing-library/react-native");
+
+var _App = _interopRequireDefault(require("../App"));
+
+var _MainWeatherCard = _interopRequireDefault(require("../components/MainWeatherCard/MainWeatherCard"));
+
+it('Generates a Snapshot of <App/>', function () {
+  var _render = (0, _reactNative2.render)(_react.default.createElement(_App.default, null)),
+      toJSON = _render.toJSON;
+
+  expect(toJSON()).toMatchSnapshot();
+});
+
+var mainComponent = _react.default.createElement(_App.default, null);
+
+it('Show ActivityIndicator before fetch fata', function () {
+  var _render2 = (0, _reactNative2.render)(mainComponent),
+      getByTestId = _render2.getByTestId;
+
+  expect(getByTestId('App.ActivityIndicator')).toBeTruthy();
+});
+describe('Get current location info', function () {
+  it('city', function () {
+    var _render3 = (0, _reactNative2.render)(_react.default.createElement(_MainWeatherCard.default, {
+      cityInfo: mock_cityInfo,
+      isCurrentLocation: true
+    })),
+        getByTestId = _render3.getByTestId;
+
+    expect(getByTestId("city_name")).toHaveTextContent("San Miguel de Tucumán");
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJpdCIsInJlbmRlciIsInRvSlNPTiIsImV4cGVjdCIsInRvTWF0Y2hTbmFwc2hvdCIsIm1haW5Db21wb25lbnQiLCJnZXRCeVRlc3RJZCIsInRvQmVUcnV0aHkiLCJkZXNjcmliZSIsIm1vY2tfY2l0eUluZm8iLCJ0b0hhdmVUZXh0Q29udGVudCJdLCJzb3VyY2VzIjpbIkFwcC10ZXN0LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAncmVhY3QtbmF0aXZlJztcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyByZW5kZXIsIHNjcmVlbiB9IGZyb20gJ0B0ZXN0aW5nLWxpYnJhcnkvcmVhY3QtbmF0aXZlJ1xuaW1wb3J0IEFwcCBmcm9tICcuLi9BcHAnO1xuaW1wb3J0IE1haW5XZWF0aGVyQ2FyZCBmcm9tICcuLi9jb21wb25lbnRzL01haW5XZWF0aGVyQ2FyZC9NYWluV2VhdGhlckNhcmQnO1xuXG5pdCgnR2VuZXJhdGVzIGEgU25hcHNob3Qgb2YgPEFwcC8+JywgKCkgPT4ge1xuICBjb25zdCB7IHRvSlNPTiB9ID1yZW5kZXIoPEFwcCAvPik7XG4gIGV4cGVjdCh0b0pTT04oKSkudG9NYXRjaFNuYXBzaG90KClcbn0pO1xuXG5jb25zdCBtYWluQ29tcG9uZW50ID0gPEFwcCAvPjtcblxuLy9zaG93IEFjdGl2aXR5SW5kaWNhdG9yIGJlZm9yZSBmZXRjaCBkYXRhXG5pdCgnU2hvdyBBY3Rpdml0eUluZGljYXRvciBiZWZvcmUgZmV0Y2ggZmF0YScsICgpID0+IHtcbiAgY29uc3QgeyBnZXRCeVRlc3RJZCB9ID0gcmVuZGVyKG1haW5Db21wb25lbnQpO1xuICBcbiAgZXhwZWN0KGdldEJ5VGVzdElkKCdBcHAuQWN0aXZpdHlJbmRpY2F0b3InKSkudG9CZVRydXRoeSgpO1xufSk7XG5cbi8vc2hvdyBjdXJyZW50IGxvY2F0aW9uIGluZm9cbmRlc2NyaWJlKCdHZXQgY3VycmVudCBsb2NhdGlvbiBpbmZvJywgKCkgPT4ge1xuICBpdCgnY2l0eScsICgpID0+IHtcbiAgICBjb25zdCB7IGdldEJ5VGVzdElkIH0gPSByZW5kZXIoXG4gICAgICA8TWFpbldlYXRoZXJDYXJkICBjaXR5SW5mbz17bW9ja19jaXR5SW5mb30gaXNDdXJyZW50TG9jYXRpb249e3RydWV9IC8+XG4gICAgKVxuICAgIGV4cGVjdChnZXRCeVRlc3RJZChcImNpdHlfbmFtZVwiKSkudG9IYXZlVGV4dENvbnRlbnQoXCJTYW4gTWlndWVsIGRlIFR1Y3Vtw6FuXCIpO1xuICB9KVxufSlcblxuXG5cblxuLy9zaG93IGN1cnJlbnQgY291bnRyeVxuLy9zaG93IGN1cnJlbnQgbG9jYXRpb24gdGVtcFxuLy9zaG93IGN1cnJlbnQgbG9jYXRpb24gbmV4dCA1IGRheXMgZm9yZWNhc3QgXG4iXSwibWFwcGluZ3MiOiI7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBRUFBLEVBQUUsQ0FBQyxnQ0FBRCxFQUFtQyxZQUFNO0VBQ3pDLGNBQWtCLElBQUFDLG9CQUFBLEVBQU8sNkJBQUMsWUFBRCxPQUFQLENBQWxCO0VBQUEsSUFBUUMsTUFBUixXQUFRQSxNQUFSOztFQUNBQyxNQUFNLENBQUNELE1BQU0sRUFBUCxDQUFOLENBQWlCRSxlQUFqQjtBQUNELENBSEMsQ0FBRjs7QUFLQSxJQUFNQyxhQUFhLEdBQUcsNkJBQUMsWUFBRCxPQUF0Qjs7QUFHQUwsRUFBRSxDQUFDLDBDQUFELEVBQTZDLFlBQU07RUFDbkQsZUFBd0IsSUFBQUMsb0JBQUEsRUFBT0ksYUFBUCxDQUF4QjtFQUFBLElBQVFDLFdBQVIsWUFBUUEsV0FBUjs7RUFFQUgsTUFBTSxDQUFDRyxXQUFXLENBQUMsdUJBQUQsQ0FBWixDQUFOLENBQTZDQyxVQUE3QztBQUNELENBSkMsQ0FBRjtBQU9BQyxRQUFRLENBQUMsMkJBQUQsRUFBOEIsWUFBTTtFQUMxQ1IsRUFBRSxDQUFDLE1BQUQsRUFBUyxZQUFNO0lBQ2YsZUFBd0IsSUFBQUMsb0JBQUEsRUFDdEIsNkJBQUMsd0JBQUQ7TUFBa0IsUUFBUSxFQUFFUSxhQUE1QjtNQUEyQyxpQkFBaUIsRUFBRTtJQUE5RCxFQURzQixDQUF4QjtJQUFBLElBQVFILFdBQVIsWUFBUUEsV0FBUjs7SUFHQUgsTUFBTSxDQUFDRyxXQUFXLENBQUMsV0FBRCxDQUFaLENBQU4sQ0FBaUNJLGlCQUFqQyxDQUFtRCx1QkFBbkQ7RUFDRCxDQUxDLENBQUY7QUFNRCxDQVBPLENBQVIifQ==

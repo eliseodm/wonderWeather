@@ -5,6 +5,8 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
+
+
 import MainWeatherCard from './components/MainWeatherCard/MainWeatherCard';
 import ForecastContainer from './components/ForecastContainer/ForecastContainer';
 import SelectedCityModal from './components/SelectedCityModal/SelectedCityModal';
@@ -43,7 +45,7 @@ const App = () => {
 
   if(loading){
     return <SafeAreaView style={styles.loading}>
-              <ActivityIndicator size="large" />
+              <ActivityIndicator testID="App.ActivityIndicator" size="large" />
           </SafeAreaView>;
   }
 
