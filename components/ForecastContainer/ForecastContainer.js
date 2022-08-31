@@ -8,7 +8,7 @@ function ForecastContainer({ forecastInfo }) {
     return(
         <View style={styles.forecastContainer}>
             <Text style={styles.subtitle}>Proximos 5 dias</Text>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View>
                     {
                         forecastInfo.map((day) => {
