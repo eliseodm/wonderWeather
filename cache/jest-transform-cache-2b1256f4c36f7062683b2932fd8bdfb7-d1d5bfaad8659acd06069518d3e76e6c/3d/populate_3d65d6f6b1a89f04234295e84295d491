@@ -1,8 +1,0 @@
-01e49f3d7fd6734708a9e5c5d8536fe2
-// populates missing values
-module.exports = function (dst, src) {
-  Object.keys(src).forEach(function (prop) {
-    dst[prop] = dst[prop] || src[prop];
-  });
-  return dst;
-};

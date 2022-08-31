@@ -1,8 +1,0 @@
-ae7655a8333a83456f245018c6fd24a2
-'use strict';
-
-module.exports = {
-  silentJSONParsing: true,
-  forcedJSONParsing: true,
-  clarifyTimeoutError: false
-};
