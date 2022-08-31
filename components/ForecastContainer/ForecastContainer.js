@@ -4,9 +4,7 @@ import ForecastDay from '../ForecastDay/ForecastDay';
 import { dayNames } from "../../constants";
 
 
-function ForecastContainer({ cityInfo }) {
-    const { forecastInfo } = cityInfo;
-
+function ForecastContainer({ forecastInfo }) {
     return(
         <View style={styles.forecastContainer}>
             <Text style={styles.subtitle}>Proximos 5 dias</Text>

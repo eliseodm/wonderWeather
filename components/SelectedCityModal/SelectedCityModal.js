@@ -1,8 +1,8 @@
 import { StyleSheet, View, Text, Modal, Button } from 'react-native';
-import React, { useState }from 'react';
-import { listOfCities } from '../../constants/index';
+import React, { useState } from 'react';
 
-function SelectedCityModal({ selectedCity }) {
+
+function SelectedCityModal({ onSelectCity, citiesList }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     
     const showModal = () => {
@@ -14,7 +14,7 @@ function SelectedCityModal({ selectedCity }) {
     };
 
     const handleSelect = (city) => {
-        selectedCity(city)
+        onSelectCity(city)
         handleCancel()
     }
     
@@ -25,9 +25,9 @@ function SelectedCityModal({ selectedCity }) {
                 <View style={styles.modalContainer}>
                     <Text>Otras ciudades disponibles</Text>
                     {
-                        listOfCities.map((city) => {
+                        citiesList.map((city) => {
                             return(
-                                <Button key={city.name} onPress={()=> handleSelect(city)} title={city.name}/>
+                                <Button key={city.city} onPress={()=> handleSelect(city)} title={city.city}/>
                             )
                         })
                     }

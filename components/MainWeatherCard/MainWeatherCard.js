@@ -2,13 +2,18 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import React from 'react';
 
 
-function MainWeatherCard({ cityInfo }) {
+function MainWeatherCard({ cityInfo, isCurrentLocation }) {
 
   const { city, country, temp, minTemp, maxTemp, icon } = cityInfo;
   return (
       <>
           <Text style={styles.city}>{city}</Text>
           <Text style={styles.country}>{country}</Text>
+          {isCurrentLocation === true && (
+            <Text>
+              Uicación actual
+            </Text>
+          )}
           <View style={styles.current}>
               <Image
                   style={styles.largeIcon}

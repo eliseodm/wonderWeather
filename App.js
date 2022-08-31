@@ -12,54 +12,34 @@ import SelectedCityModal from './components/SelectedCityModal/SelectedCityModal'
 import usePublicIp from "./hooks/usePublicIp";
 import useLocationInfo from "./hooks/useLocationInfo";
 import useForecastInfo from './hooks/useForecastInfo';
-import useSelectedCityForecastInfo from './hooks/useSelectedCityForecastInfo';
+import { listOfCities } from "./constants";
 
 const App = () => {
-  const [isCurrentLocation, setIsCurrentLocation] = useState(true);
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [citiesList, setCitiesList] = useState(listOfCities);
+  const [selectedCity, setSelectedCity] = useState({});
   const { publicIpV4 } = usePublicIp();
   const { locationData } = useLocationInfo(publicIpV4);
   const { forecastInfo, todayInfo, loading } = useForecastInfo(
-    locationData.lat,
-    locationData.lon
+    selectedCity.lat,
+    selectedCity.lon
   );
-  const [selectedCityName, setSelectedCityName] = useState({
-    name: "Berlin",
-    country: "DE",
-  });
-  const {
-    selectedCityForecastInfo,
-    selectedTodayForecastInfo,
-  } = useSelectedCityForecastInfo(selectedCityName);
+  
+  const isCurrentLocation = locationData && locationData.city === selectedCity.city;
 
-  const onSetSelectedCityName = useCallback((option) => {
-    setSelectedCityName(option);
-    setIsCurrentLocation(false);
+  useEffect(() => {
+    if (
+      locationData !== null &&
+      locationData.city &&
+      citiesList[0].city !== locationData.city
+    ) {
+      setCitiesList([locationData, ...citiesList]);
+      setSelectedCity(locationData);
+    }
+  }, [locationData, setCitiesList, citiesList]);
+
+  const onSelectCity = useCallback((option) => {
+    setSelectedCity(option);
   }, []);
-
-  useEffect(() => {
-    setSelectedCity({
-      city: locationData.city,
-      country: locationData.country,
-      temp: todayInfo.temp,
-      minTemp: todayInfo.minTemp,
-      maxTemp: todayInfo.maxTemp,
-      icon: todayInfo.icon,
-      forecastInfo: [...forecastInfo],
-    });
-  }, [locationData, forecastInfo]);
-
-  useEffect(() => {
-    setSelectedCity({
-      city: selectedCityName.name,
-      country: selectedCityName.country,
-      temp: selectedTodayForecastInfo && selectedTodayForecastInfo.temp,
-      minTemp: selectedTodayForecastInfo && selectedTodayForecastInfo.minTemp,
-      maxTemp: selectedTodayForecastInfo && selectedTodayForecastInfo.maxTemp,
-      icon: selectedTodayForecastInfo && selectedTodayForecastInfo.icon,
-      forecastInfo: [...selectedCityForecastInfo],
-    });
-  }, [selectedCityForecastInfo, selectedTodayForecastInfo]);
 
   if(loading){
     return <SafeAreaView style={styles.loading}>
@@ -71,12 +51,16 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.appTitle}>Wonder Weather</Text>
       <MainWeatherCard
-        cityInfo={selectedCity}
+        isCurrentLocation={isCurrentLocation}
+        cityInfo={{ ...todayInfo, ...selectedCity }}
       />
       <ForecastContainer
-        cityInfo={selectedCity}
+        forecastInfo={forecastInfo}
       />
-      <SelectedCityModal selectedCity={onSetSelectedCityName} />
+      <SelectedCityModal
+        onSelectCity={onSelectCity}
+        citiesList={citiesList}
+      />
     </SafeAreaView>
   );
 };
