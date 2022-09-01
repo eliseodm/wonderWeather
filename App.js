@@ -6,7 +6,6 @@ import {
   Text,
 } from 'react-native';
 
-
 import MainWeatherCard from './components/MainWeatherCard/MainWeatherCard';
 import ForecastContainer from './components/ForecastContainer/ForecastContainer';
 import SelectedCityModal from './components/SelectedCityModal/SelectedCityModal';

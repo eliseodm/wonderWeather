@@ -46,7 +46,7 @@ function SelectedCityModal({ onSelectCity, citiesList }) {
 
 const styles = StyleSheet.create({
     showModalButton:{
-        marginTop: 15,
+        marginBottom: 25,
     },
     modalContainer: {
         flex: 1,

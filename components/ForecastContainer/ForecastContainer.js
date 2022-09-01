@@ -7,7 +7,7 @@ import { dayNames } from "../../constants";
 function ForecastContainer({ forecastInfo }) {
     return(
         <View style={styles.forecastContainer}>
-            <Text style={styles.subtitle}>Proximos 5 dias</Text>
+            <Text style={styles.subtitle}>Pronóstico para los próximos 5 días</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View>
                     {
@@ -32,7 +32,7 @@ function ForecastContainer({ forecastInfo }) {
 
 const styles = StyleSheet.create({
     subtitle:{
-        fontSize: 24,
+        fontSize: 18,
         marginVertical: 12,
         marginLeft: 4,
         color: '#e96e50',

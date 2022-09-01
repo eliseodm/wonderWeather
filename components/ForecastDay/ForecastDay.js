@@ -21,10 +21,12 @@ function ForecastDay({ day, minTemp, maxTemp, icon }) {
 const styles = StyleSheet.create({
     forecastDay:{
         flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center',
       marginBottom: 10,
     },  
     forecastTemps: {
+        marginHorizontal: 4,
         fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
